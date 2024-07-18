@@ -1,0 +1,1 @@
+export const api = "my-json-server.typicode.com/bloodredhood/mobigainapp/friends"
