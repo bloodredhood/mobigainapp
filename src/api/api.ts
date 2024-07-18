@@ -1,1 +1,1 @@
-export const api = "my-json-server.typicode.com/bloodredhood/mobigainapp/friends"
+export const api = "https://my-json-server.typicode.com/bloodredhood/mobigainapp/friends"
