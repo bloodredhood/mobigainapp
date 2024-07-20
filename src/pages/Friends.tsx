@@ -17,7 +17,7 @@ export const Friends = ({ friends }: Props) => {
   const [isModalShow, setIsModalShow] = useState(false)
 
   useEffect
-  return <div className="select-none mb-[55px]">
+  return <div className="mb-[55px]">
     <div className="flex flex-col items-center border-b border-[#2F2D2D] pb-1.5">
       <FriendsAddLogo />
       <div className="text-2xl font-bold">Зарабатывай вместе с друзьями!</div>
