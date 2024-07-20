@@ -12,5 +12,27 @@
       "title": "Nickname",
       "number" : "952.120"
     }
+  ],
+  "Earn": [
+    {
+      "title": "Посмотри видео",
+      "number" : "+5.000"
+    },
+    {
+      "title": "Подпишись на X",
+      "number" : "+10.000"
+    },
+    {
+      "title": "ППодпишись на TikTok",
+      "number" : "+1.500"
+    },
+    {
+      "title": "Подпишись на Telegram",
+      "number" : "+2.000"
+    },
+    {
+      "title": "Подпишись на YouTube",
+      "number" : "+3.000"
+    }
   ]
 }

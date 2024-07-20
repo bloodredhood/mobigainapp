@@ -12,7 +12,6 @@ export const Footer = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    console.log(location)
     if (location.pathname === "/") {
       setFriendsState(true)
     } else {
@@ -24,7 +23,7 @@ export const Footer = () => {
   const activeText = "text-[#16EC6D] activeLink"
 
   return (
-    <div className="sticky bottom-0 h-[87px] w-screen flex flex-row items-center justify-evenly bg-[#1E1E1E]">
+    <div className="sticky bottom-0 h-[80px] w-screen flex flex-row items-center justify-evenly bg-[#1E1E1E]">
       <div className="flex items-center h-[99%]" onClick={() => navigate("/")}>
         {
           friendsState

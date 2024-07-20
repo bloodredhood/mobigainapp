@@ -2,7 +2,7 @@ import { FriendsAddLogo } from "../assets/FriendsAddLogo"
 import Emerald from "../assets/Emerald.png"
 import Avatar from "../assets/Avatar.png"
 import { useEffect, useState } from "react"
-import { Friend } from "../App"
+import { Data } from "../App"
 import { ModalFriend } from "../components/ModalFriend"
 
 const lightZonesStyle = "rounded-[12px] bg-[#2F2D2D] p-3"
@@ -10,14 +10,14 @@ const lightZonesTitle = "text-base font-bold pb-2.5"
 const lightZonesLine = "flex items-center justify-center font-medium -mb-1.5"
 
 interface Props {
-  friends: Array<Friend>;
+  friends: Array<Data>;
 }
 
 export const Friends = ({ friends }: Props) => {
   const [isModalShow, setIsModalShow] = useState(false)
 
   useEffect
-  return <div className="mb-[55px]">
+  return <div className="select-none mb-[55px]">
     <div className="flex flex-col items-center border-b border-[#2F2D2D] pb-1.5">
       <FriendsAddLogo />
       <div className="text-2xl font-bold">Зарабатывай вместе с друзьями!</div>
@@ -42,26 +42,25 @@ export const Friends = ({ friends }: Props) => {
         </div>
         <div className="flex flex-col m-[10px]">
           {friends.map((el, idx) =>
-          <div className="flex flex-row justify-between my-[5px]">
-            <div className="flex flex-row items-center">
-              <div>{idx + 1}</div>
-              <div className=" mx-[10px]"><img src={Avatar}/></div>
-              <div>{el.title}</div>
+            <div className="flex flex-row justify-between my-[5px]">
+              <div className="flex flex-row items-center">
+                <div>{idx + 1}</div>
+                <div className=" mx-[10px]"><img src={Avatar} /></div>
+                <div>{el.title}</div>
+              </div>
+              <div className="flex flex-row items-center">
+                <div><img src={Emerald} /></div>
+                <div>{el.number}</div>
+              </div>
             </div>
-            <div className="flex flex-row items-center">
-              <div><img src={Emerald}/></div>
-              <div>{el.number}</div>
-            </div>
-          </div>
           )}
         </div>
         {isModalShow && (
-        <ModalFriend close={() => setIsModalShow(false)}/>
-      )}
+          <ModalFriend close={() => setIsModalShow(false)} />
+        )}
       </div>
-      <div className="sticky font-medium text-xl flex items-center justify-center bottom-[55px] rounded-[20px] h-[52px] bg-[#16EC6D] text-[#1E1E1E]" onClick={() => setIsModalShow(true)}>Пригласить друга</div>
     </div>
-    <div>
+    <div className="sticky font-medium text-xl flex items-center justify-center bottom-[55px] rounded-[20px] h-[52px] bg-[#16EC6D] text-[#1E1E1E]" onClick={() => setIsModalShow(true)}>Пригласить друга
     </div>
   </div>
 }

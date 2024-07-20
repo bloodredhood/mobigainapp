@@ -1,30 +1,35 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
-import { api } from './api/api'
+import { apiFriends, apiEarn } from './api/api'
 import { Footer } from './components/Footer'
 import { Route, Routes } from "react-router-dom"
 import { Friends } from './pages/Friends'
 import { Earn } from './pages/Earn'
 
-export interface Friend {
+export interface Data {
   title: string,
   number: string
 }
 
 function App() {
-  const [state, setState] = useState<Array<Friend>>([])
+  const [friends, setFriends] = useState<Array<Data>>([])
+  const [earn, setEarn] = useState<Array<Data>>([])
   useEffect(() => {
     const loadData = async () => {
-      if (state.length === 0) {
-        console.log(api)
-        const response = await axios.get(api)
-          setState(response.data)
+      if (friends.length === 0) {
+        const response = await axios.get(apiFriends)
+        setFriends(response.data)
+  
+      }
+      if (earn.length === 0) {
+        const response = await axios.get(apiEarn)
+        setEarn(response.data)
   
       }
     }
     loadData()
-  },[state])
+  },[friends])
 
 
   return (
@@ -32,8 +37,8 @@ function App() {
     <div className={`h-screen flex flex-col items-center`}>
       <div className='flex-1 overflow-y-scroll relative content-wrapper'>
         <Routes>
-          <Route path='/' element={<Friends friends={state}/>} />
-          <Route path='/earn' element={<Earn />} />
+          <Route path='/' element={<Friends friends={friends}/>} />
+          <Route path='/earn' element={<Earn earn={earn}/>} />
         </Routes>
       </div>
       <Footer />
