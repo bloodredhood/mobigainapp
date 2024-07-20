@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Friend } from "../App"
 import { ModalFriend } from "../components/ModalFriend"
 
-const lightZonesStyle = "rounded-[12px] bg-[#2F2D2D] p-3.5"
+const lightZonesStyle = "rounded-[12px] bg-[#2F2D2D] p-3"
 const lightZonesTitle = "text-base font-bold pb-2.5"
 const lightZonesLine = "flex items-center justify-center font-medium -mb-1.5"
 
