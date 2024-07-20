@@ -29,9 +29,9 @@ export const Friends = ({ friends }: Props) => {
           <div className={lightZonesLine}><img src={Emerald} alt="" /><p className="pr-3.5">+100 тебе</p></div>
           <div className={lightZonesLine}><img src={Emerald} alt="" /><p className="pr-3.5">+1000 ему</p></div>
         </div>
-        <div className={`${lightZonesStyle} w-[177px]`}>
+        <div className={`${lightZonesStyle} w-[45%]`}>
           <div className={lightZonesTitle}>Пригласить друга c <span className="text-[#16EC6D]">TG Premium</span></div>
-          <div className={lightZonesLine}><img src={Emerald} alt="" /><p className="pr-3.5">+100 тебе</p></div>
+          <div className={lightZonesLine}><img src={Emerald} alt="" /><p className="pr-3.5">+500 тебе</p></div>
           <div className={lightZonesLine}><img src={Emerald} alt="" /><p className="pr-3.5">+1000 ему</p></div>
         </div>
       </div>
