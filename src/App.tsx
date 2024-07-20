@@ -29,7 +29,7 @@ function App() {
       }
     }
     loadData()
-  },[friends])
+  },[friends, earn])
 
 
   return (

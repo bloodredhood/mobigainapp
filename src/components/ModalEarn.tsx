@@ -12,7 +12,7 @@ interface Props {
   close: () => void
 }
 
-export const ModalEarn = ({ title, string, close }: Props) => {
+export const ModalEarn = ({ title, close }: Props) => {
   return <>
   <div className="fixed top-0 right-0 bottom-0 left-0 z-[1] flex justify-center items-center" style={{background: "rgba(22, 236, 109, 0.5)"}}>
     <div className="w-[320px] h-[200px] rounded-[12px] pb-[20px] bg-[#2F2D2D] z-[100]" onClick={(e) => e.stopPropagation()}>
