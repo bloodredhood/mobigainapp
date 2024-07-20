@@ -12,6 +12,7 @@ interface Props {
 export const Earn = ({ earn }: Props) => {
 
   const [isModalShow, setIsModalShow] = useState(false)
+  const [modalData, setModalData] = useState(["",""])
 
   return <div className="select-none mb-[55px]">
     <div className="flex flex-col items-center border-b border-[#2F2D2D] pb-1.5">
@@ -20,10 +21,13 @@ export const Earn = ({ earn }: Props) => {
     </div>
     <div className="mx-[5%]">
       <div className="my-[15px] font-bold text-xl">Список заданий</div>
-        {earn.map(el => <Quest title={el.title} number={el.number} />)}
+        {earn.map(el => <div onClick={() => {
+          setIsModalShow(true)
+          setModalData([el.title, el.number])
+          }}><Quest title={el.title} number={el.number} /></div>)}
     </div>
     {
-    isModalShow && earn.map(el => <ModalEarn title={el.title} number={el.number} close={() => setIsModalShow(false)} /> )
+    isModalShow && <ModalEarn title={modalData[0]} number={modalData[1]} close={() => setIsModalShow(false)} /> 
     }
   </div>
 }
