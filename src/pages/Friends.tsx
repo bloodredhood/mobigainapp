@@ -23,7 +23,7 @@ export const Friends = ({ friends }: Props) => {
       <div className="text-2xl font-bold">Зарабатывай вместе с друзьями!</div>
     </div>
     <div className="w-screen">
-      <div className="flex items-start justify-between mx-[5%] my-3.5">
+      <div className="flex items-start justify-between my-3.5">
         <div className={`${lightZonesStyle} w-[177px]`}>
           <div className={lightZonesTitle}>Пригласить друга</div>
           <div className={lightZonesLine}><img src={Emerald} alt="" /><p className="pr-3.5">+100 тебе</p></div>
