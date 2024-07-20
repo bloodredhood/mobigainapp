@@ -2,8 +2,12 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import { api } from './api/api'
+import { Footer } from './components/Footer'
+import { Route, Routes } from "react-router-dom"
+import { Friends } from './pages/Friends'
+import { Earn } from './pages/Earn'
 
-interface Friend {
+export interface Friend {
   title: string,
   number: string
 }
@@ -20,14 +24,20 @@ function App() {
       }
     }
     loadData()
-    console.log(state)
   },[state])
+
+
   return (
     <>
-      {state.map((el,idx) => 
-        <div>{idx + 1}{el.title}{el.number}</div>
-        
-      )}
+    <div className={`h-screen flex flex-col items-center`}>
+      <div className='flex-1 overflow-y-scroll relative content-wrapper'>
+        <Routes>
+          <Route path='/' element={<Friends friends={state}/>} />
+          <Route path='/earn' element={<Earn />} />
+        </Routes>
+      </div>
+      <Footer />
+    </div>
     </>
   )
 }
